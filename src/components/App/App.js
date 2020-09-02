@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import Form from '../Form/Form'
 import SongController from '../SongController/SongController';
 import { getAllSongs } from '../apiCalls'
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,6 @@ class App extends Component {
   componentDidMount = () => {
     getAllSongs()
       .then(data =>{
-        console.log(data);
         this.setState({ songQueue: data })
       })
       .catch(error => console.error(error));
@@ -28,6 +28,7 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
+            <Form />
             <SongController songQueue={this.state.songQueue}/>
           </main>
         </div>
