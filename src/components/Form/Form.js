@@ -33,18 +33,21 @@ class Form extends Component {
         <h2>Add a song here!</h2>
         <input
           name='songTitle'
+          data-testid='songTitle'
           placeholder='Song Title'
           value={this.state.songTitle}
           onChange={this.handleChange}
         />
         <input
           name='artistName'
-          placeholder='ArtistName'
+          data-testid='artistName'
+          placeholder='Artist Name'
           value={this.state.artistName}
           onChange={this.handleChange}
         />
         <input
           name='link'
+          data-testid='link'
           placeholder='https://www.youtube.com/watch?v=link'
           value={this.state.link}
           onChange={this.handleChange}
