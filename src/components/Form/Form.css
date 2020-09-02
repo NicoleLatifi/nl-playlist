@@ -1,0 +1,19 @@
+.form {
+  background-color: #cfb9a2;
+  border: 1px solid #302d2a;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 400px;
+}
+
+input {
+  margin: 10px;
+}
+
+button {
+  margin: auto;
+  height: 30px;
+  width: 150px;
+}
