@@ -3,7 +3,7 @@ import SongCard from '../SongCard/SongCard'
 
 const SongController = ( { songQueue, changeSong } ) => {
   const songCards = songQueue.map( song => {
-    return <SongCard {...song} key={songQueue.id} />
+    return <SongCard {...song} key={song.id} />
   })
 
   return (
