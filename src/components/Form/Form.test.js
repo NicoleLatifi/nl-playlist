@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './Form';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 describe('Form', () => {
   it('should display the correct content when rendered', () => {
@@ -20,9 +21,9 @@ describe('Form', () => {
   });
 
   it('should take inputs', () => {
+    const mockHandleChange = jest.fn();
+
     render( <Form /> )
-
-
 
   });
 
