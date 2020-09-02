@@ -12,8 +12,19 @@ class Form extends Component {
     }
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const newSong = {
+      songName: this.state.songName,
+      artistName: this.state.artistName,
+      link: this.state.link,
+      id: this.state.id
+    }
+    this.props.addSong(newSong);
   }
 
   render() {
@@ -38,7 +49,7 @@ class Form extends Component {
           value={this.state.link}
           onChange={this.handleChange}
         />
-        <button>Add To Playlist</button>
+        <button onClick={this.handleSubmit}>Add To Playlist</button>
       </form>
     )
   }
