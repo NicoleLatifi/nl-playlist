@@ -1,7 +1,18 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import { render, screen, fireEvent } from '@testing-library/react';
 
-test('true should be true', () => {
-  expect(true).toEqual(true);
+describe('App', () => {
+  it('should allow a user to add a song', () => {
+    const mockAddSong = jest.fn();
+
+    render( <App addSong={mockAddSong} /> )
+
+    const submitButton = screen.getByRole('button', { name: 'Add To Playlist'});
+
+    fireEvent.click(submitButton);
+
+    expect(mockAddSong).toHaveBeenCalledTimes(1);
+
+  })
 });

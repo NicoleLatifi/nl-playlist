@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from './Form';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 describe('Form', () => {
   it('should display the correct content when rendered', () => {
@@ -17,6 +17,13 @@ describe('Form', () => {
     expect(artistNameInput).toBeInTheDocument();
     expect(linkInput).toBeInTheDocument();
     expect(submitButton).toBeInTheDocument();
+  });
+
+  it('should take inputs', () => {
+    render( <Form /> )
+
+
+
   });
 
 });
