@@ -6,9 +6,17 @@ describe('Form', () => {
   it('should display the correct content when rendered', () => {
     render( <Form /> )
 
-    const formHeader = screen.getByRole('heading', { name: 'Add a song here!' })
+    const formHeader = screen.getByRole('heading', { name: 'Add a song here!' });
+    const songNameInput = screen.getByTestId('songTitle');
+    const artistNameInput = screen.getByTestId('artistName');
+    const linkInput = screen.getByTestId('link');
+    const submitButton = screen.getByRole('button', { name: 'Add To Playlist'})
 
     expect(formHeader).toBeInTheDocument();
+    expect(songNameInput).toBeInTheDocument();
+    expect(artistNameInput).toBeInTheDocument();
+    expect(linkInput).toBeInTheDocument();
+    expect(submitButton).toBeInTheDocument();
   });
 
 });
